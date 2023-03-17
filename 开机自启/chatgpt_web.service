@@ -1,0 +1,14 @@
+[Unit]
+Description=ChatGPT web
+After=network.target
+Requires=chatgpt_service.service
+After=chatgpt_service.service
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/chatgpt_web.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
